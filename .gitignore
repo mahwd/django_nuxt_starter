@@ -2,3 +2,4 @@ venv
 .idea
 db.sqlite3
 client/node_modules
+__pycache__/
