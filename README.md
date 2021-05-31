@@ -1,0 +1,1 @@
+# Django + Nuxt starter boilerplate
