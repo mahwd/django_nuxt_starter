@@ -3,3 +3,4 @@ venv
 db.sqlite3
 client/node_modules
 __pycache__/
+*.py[cod]
