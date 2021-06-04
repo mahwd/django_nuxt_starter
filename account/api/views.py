@@ -25,7 +25,25 @@ def registration_view(request):
 
 
 @api_view(['GET', ])
-@permission_classes((IsAuthenticated, ))
+@permission_classes((IsAuthenticated,))
+def get_user_info(request):
+    user = request.user
+    if user:
+        data = {
+            "email": user.email,
+            "username": user.username,
+            "first_name": user.first_name,
+            "last_name": user.last_name,
+            "date_joined": user.date_joined,
+            "is_admin": user.is_admin
+        }
+        return Response(data)
+    else:
+        return Response(status=status.HTTP_401_UNAUTHORIZED)
+
+
+@api_view(['GET', ])
+@permission_classes((IsAuthenticated,))
 def logout(request):
     user = request.user
     if user:

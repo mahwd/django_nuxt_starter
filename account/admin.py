@@ -10,13 +10,15 @@ class AccountAdmin(UserAdmin):
     filter_horizontal = ()
     list_filter = ()
     fieldsets = (
-        (None, {'fields': ('email', 'username', 'password')}),
+        (None, {'fields': ('email', 'username', 'password', 'first_name', 'last_name',)}),
         ('Permissions', {'fields': ('is_admin', 'is_active', 'is_staff', 'is_superuser',)}),
     )
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'username', 'password1', 'password2', 'is_admin', 'is_active', 'is_staff', 'is_superuser',)}
+            'fields': (
+                'email', 'username', 'password1', 'password2', 'first_name', 'last_name', 'is_admin', 'is_active',
+                'is_staff', 'is_superuser',)}
          ),
     )
 
